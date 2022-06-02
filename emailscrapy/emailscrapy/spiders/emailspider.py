@@ -4,6 +4,7 @@ from scrapy.linkextractors import LinkExtractor
 import re
 import tldextract
 import logging
+from product_scraper.items import EmailscrapyItem
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +19,7 @@ class EmailSpider(CrawlSpider):
 
     def __init__(self,url='',**kwargs):
         self.start_urls= [f"{url}"]
+        logger.info(self.start_urls)
         ext =tldextract.extract(url)
         self.allowed_domains.append(ext.domain)
         self.email_list = []
@@ -28,11 +30,16 @@ class EmailSpider(CrawlSpider):
         EMAIL_REGEX = r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+'
         emails = re.finditer(EMAIL_REGEX, str(response.text))
         for email in emails:
-            self.email_list.append(email.group())
+            item = EmailscrapyItem()
+            item['url']=response.url
+            item['email']=email.group()
+            item['title']=response.css('title::text').get()
+            return item
+            
 
-        for email in set(self.email_list):
-            yield{
-                "emails": email
-            }
+        # for email in set(self.email_list):
+        #     yield{
+        #         "emails": email
+        #     }
  
-        self.email_list.clear()
+        # self.email_list.clear()
