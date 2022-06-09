@@ -88,7 +88,7 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 ROBOTSTXT_OBEY = True
 SELENIUM_DRIVER_NAME = 'chrome'
-SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
+SELENIUM_DRIVER_EXECUTABLE_PATH = '/home/robertzeng/config/chromedriver'
 SELENIUM_DRIVER_ARGUMENTS=['-headless']  # '--headless' if using chrome instead of firefox
 
 DOWNLOADER_MIDDLEWARES = {
