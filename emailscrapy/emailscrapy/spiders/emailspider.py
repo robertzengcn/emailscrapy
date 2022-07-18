@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from dns.resolver import query
 
 logger = logging.getLogger(__name__)
-# scrapy crawl email_spider -a url=https://www.flipkart.com/toys-online-store
+
 
 
 class EmailSpider(CrawlSpider):
@@ -71,7 +71,7 @@ class EmailSpider(CrawlSpider):
                 item = EmailscrapyItem()
                 item['url'] = response.url
                 item['email'] = email.group()
-                item['title'] = response.css('title::text').get()
+                item['description'] = response.css('title::text').get()
                 logger.info(item)
                 return item
             
