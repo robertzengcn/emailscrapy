@@ -20,7 +20,6 @@ setup(name='Scrapyemail',
       long_description_content_type="text/markdown",
       author='Robert Zeng',
       author_email='zengjianze@gmail.com',
-      packages=['Scrapyemail'],
-      package_dir={'examples': 'examples'},
+      packages=['emailscrapy'],
       install_requires=requirements
 )
