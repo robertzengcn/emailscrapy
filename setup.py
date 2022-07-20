@@ -13,7 +13,7 @@ requirements = [r for r in open('requirements.txt', 'r').read().split('\n') if r
 
 # https://dustingram.com/articles/2018/03/16/markdown-descriptions-on-pypi
 
-setup(name='Scrapyemail',
+setup(name='Emailscrapy',
       version=version,
       description='A module to scrape email from web site',
       long_description=open('README.md').read(),
