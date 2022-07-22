@@ -21,5 +21,6 @@ setup(name='Emailscrapy',
       author='Robert Zeng',
       author_email='zengjianze@gmail.com',
       packages=['emailscrapy'],
+      entry_points={'console_scripts': ['Emailscrapy = emailscrapy:main']},
       install_requires=requirements
 )
