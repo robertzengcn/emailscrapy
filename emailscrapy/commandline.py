@@ -23,7 +23,7 @@ def get_command_line(only_print_help=False):
                         )
 
 
-    parser.add_argument('-o-', '--output-filename', type=str, action='store', default='',
+    parser.add_argument('-o', '--output-filename', type=str, action='store', default='',
                         help='The name of the output file. If the file ending is "json", write a json file, if the '
                              'ending is "csv", write a csv file.')
 

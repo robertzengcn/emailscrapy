@@ -4,7 +4,7 @@ from scrapy.linkextractors import LinkExtractor
 import re
 import tldextract
 import logging
-from emailscrapy.items import EmailscrapyItem
+from emailscrapy.emailscrapy.items import EmailscrapyItem
 from scrapy_selenium import SeleniumRequest
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By

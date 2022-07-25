@@ -1,2 +1,4 @@
-from spiders import emailspider
+from .spiders import emailspider
 import logging
+from .items import EmailscrapyItem
+

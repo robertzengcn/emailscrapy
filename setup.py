@@ -13,7 +13,7 @@ requirements = [r for r in open('requirements.txt', 'r').read().split('\n') if r
 
 # https://dustingram.com/articles/2018/03/16/markdown-descriptions-on-pypi
 
-setup(name='Emailscrapy',
+setup(name='emailscrapy',
       version=version,
       description='A module to scrape email from web site',
       long_description=open('README.md').read(),
@@ -21,6 +21,6 @@ setup(name='Emailscrapy',
       author='Robert Zeng',
       author_email='zengjianze@gmail.com',
       packages=['emailscrapy'],
-      entry_points={'console_scripts': ['Emailscrapy = emailscrapy:main']},
+      entry_points={'console_scripts': ['Emailscrapy = emailscrapy.core:main']},
       install_requires=requirements
 )

@@ -9,15 +9,13 @@ email scrapy is written in python3,You can also install it comfortably with pip
 ```
 virtualenv --python python3 env
 source env/bin/activate
+pip3 install git+https://github.com/robertzengcn/emailscrapy.git@main
 ```
 ## run spider
 ```
-scrapy crawl email_spider -a url=https://www.example.com
+Emailscrapy -u http://www.example.com -o output.json
 ```
 
-you can save the result to json file by use follow command
-```
-scrapy crawl email_spider -a url=https://www.example.com -o email.json
-```
+
 
 
