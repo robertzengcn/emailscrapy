@@ -20,7 +20,7 @@ setup(name='emailscrapy',
       long_description_content_type="text/markdown",
       author='Robert Zeng',
       author_email='zengjianze@gmail.com',
-      packages=['emailscrapy'],
+      packages=['emailscrapy','emailscrapy.emailscrapy'],
       entry_points={'console_scripts': ['Emailscrapy = emailscrapy.core:main']},
       install_requires=requirements
 )
