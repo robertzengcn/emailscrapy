@@ -3,6 +3,7 @@
 
 import re
 from setuptools import setup
+from setuptools import find_packages
 
 version = re.search(
     "^__version__\s*=\s*'(.*)'",
@@ -18,9 +19,11 @@ setup(name='emailscrapy',
       description='A module to scrape email from web site',
       long_description=open('README.md').read(),
       long_description_content_type="text/markdown",
+      include_package_data=True,
       author='Robert Zeng',
       author_email='zengjianze@gmail.com',
-      packages=['emailscrapy','emailscrapy.emailscrapy'],
+    #   packages=['emailscrapy','emailscrapy.emailscrapy','emailscrapy.emailscrapy.spiders'],
+      packages=find_packages(),
       entry_points={'console_scripts': ['Emailscrapy = emailscrapy.core:main']},
       install_requires=requirements
 )
