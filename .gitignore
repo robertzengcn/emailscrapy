@@ -3,4 +3,5 @@ env/
 */__pycache__/*
 Emailscrapy.egg-info
 emailscrapy.egg-info/
+*.json
 

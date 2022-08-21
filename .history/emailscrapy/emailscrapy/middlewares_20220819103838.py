@@ -6,8 +6,6 @@
 from scrapy import signals
 from w3lib.http import basic_auth_header 
 import logging
-import configparser
-import os
 
 logger = logging.getLogger(__name__)
 
@@ -121,23 +119,5 @@ class CustomProxyMiddleware(object):
     
     def process_request(self, request, spider):
         spider.logger.info("start use proxy")
-        config = configparser.ConfigParser()
-        if os.path.exists('proxy.ini'):
-            config.read('proxy.ini')
-            defaultConfig=config['DEFAULT']
-            if defaultConfig!=None:
-                proxyip=defaultConfig.get('ip',None)
-                proxyport=defaultConfig.get('port',None)
-                proxyuser=defaultConfig.get('user',None)
-                proxypass=defaultConfig.get('password',None)
-                protocol=defaultConfig.get('protocol','https://')
-        # spider.logger.info(config['DEFAULT']['ip'])
-                if proxyip!=None and proxyport!=None: 
-                    proxyUrl=protocol+proxyip+":"+proxyport
-                    spider.logger.info(proxyUrl)
-                    request.meta["proxy"] =proxyUrl 
-                if proxyuser!=None and proxypass!=None: 
-                    request.headers["Proxy-Authorization"] = basic_auth_header(proxyuser, proxypass)        
-    
-    def spider_opened(self, spider):
-        spider.logger.info('Spider opened: %s' % spider.name)
+        request.meta["proxy"] = "http://192.168.1.1:8050"
+        request.headers["Proxy-Authorization"] = basic_auth_header("<proxy_user>", "<proxy_pass>")        

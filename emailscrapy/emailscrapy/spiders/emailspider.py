@@ -26,6 +26,7 @@ class EmailSpider(CrawlSpider):
     def __init__(self, url='', **kwargs):
         self.start_urls = [f"{url}"]
         self.initurl = f"{url}"
+        
         logger.info(self.start_urls)
         ext = tldextract.extract(url)
         # logger.info("the domain is {}".format(ext))

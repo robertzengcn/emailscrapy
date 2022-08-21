@@ -52,7 +52,7 @@ ROBOTSTXT_OBEY = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-  'emailscrapy.emailscrapy.middlewares.CustomProxyMiddleware': 350, 
+'emailscrapy.middlewares.CustomProxyMiddleware': 350, 
    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 400, 
    'emailscrapy.middlewares.EmailscrapyDownloaderMiddleware': 543,
 }
