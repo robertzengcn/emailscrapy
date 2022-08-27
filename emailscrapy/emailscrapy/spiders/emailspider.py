@@ -71,7 +71,7 @@ class EmailSpider(CrawlSpider):
             if res:
                 item = EmailscrapyItem()
                 item['url'] = response.url
-                item['email'] = email.group()
+                item['email'] = email.group().strip()
                 item['description'] = response.css('title::text').get()
                 logger.info(item)
                 return item
