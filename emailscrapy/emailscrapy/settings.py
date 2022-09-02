@@ -92,7 +92,7 @@ DOWNLOADER_MIDDLEWARES = {
 ROBOTSTXT_OBEY = True
 SELENIUM_DRIVER_NAME = 'chrome'
 SELENIUM_DRIVER_EXECUTABLE_PATH = '/home/robertzeng/config/chromedriver'
-SELENIUM_DRIVER_ARGUMENTS=['-headless']  # '--headless' if using chrome instead of firefox
+SELENIUM_DRIVER_ARGUMENTS=['-headless','--no-sandbox']  # '--headless' if using chrome instead of firefox
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_selenium.SeleniumMiddleware': 800
