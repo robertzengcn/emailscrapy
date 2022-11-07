@@ -25,5 +25,6 @@ setup(name='emailscrapy',
     #   packages=['emailscrapy','emailscrapy.emailscrapy','emailscrapy.emailscrapy.spiders'],
       packages=find_packages(),
       entry_points={'console_scripts': ['Emailscrapy = emailscrapy.core:main']},
-      install_requires=requirements
+      install_requires=requirements,
+      python_requires='>=3.9',
 )

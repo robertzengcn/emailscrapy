@@ -4,4 +4,6 @@ env/
 Emailscrapy.egg-info
 emailscrapy.egg-info/
 *.json
+/build
+/dist
 
