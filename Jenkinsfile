@@ -6,10 +6,10 @@ pipeline {
                  sh 'docker build -t emailscrapy .' 
             }
        }
-       stage("remove unused image"){
-            steps{
-              sh 'docker image prune -a -f'  
-            }
-        }
+      //  stage("remove unused image"){
+      //       steps{
+      //         sh 'docker image prune -a -f'  
+      //       }
+      //   }
     }   
 }
