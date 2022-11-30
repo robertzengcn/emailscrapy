@@ -11,6 +11,7 @@ import hashlib
 import os
 import logging
 from emailscrapy.config import get_config
+import signal
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +23,8 @@ class WrongConfigurationError(Exception):
 # process.crawl('EmailSpider')
 # process.start()
 
+# def signal_handler(signum, frame):
+#     raise Exception("Timed out!")
 
 def main(return_results=False, parse_cmd_line=True, config_from_dict=None,external_config_file_path=None):
     if parse_cmd_line:
@@ -53,6 +56,7 @@ def main(return_results=False, parse_cmd_line=True, config_from_dict=None,extern
             "FEEDS": {
                 outfile: {"format": "json"},
             },
+            "DEPTH_LIMIT" : 3,
             # "DOWNLOADER_MIDDLEWARES": {
             #     'emailscrapy.emailscrapy.middlewares.CustomProxyMiddleware': 350,
             #     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 400,
@@ -76,6 +80,12 @@ def main(return_results=False, parse_cmd_line=True, config_from_dict=None,extern
                 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 400,
                 'emailscrapy.emailscrapy.middlewares.EmailscrapyDownloaderMiddleware': 543,
        }
+    
+    # signal.signal(signal.SIGALRM, signal_handler)
+    # signal.alarm(5)   # Ten seconds   
+    
     process = CrawlerProcess(SETTINGS)
     process.crawl(EmailSpider, url=url)
     process.start()
+    
+
