@@ -66,7 +66,7 @@ def main(return_results=False, parse_cmd_line=True, config_from_dict=None,extern
             "SELENIUM_DRIVER_NAME": config.get("SELENIUM_DRIVER_NAME","chrome"),
             "SELENIUM_DRIVER_EXECUTABLE_PATH":config.get("SELENIUM_DRIVER_EXECUTABLE_PATH"),
             "SELENIUM_DRIVER_ARGUMENTS":config.get("SELENIUM_DRIVER_ARGUMENTS"),
-            "SELENIUM_DRIVER_ARGUMENTS":config.get("SELENIUM_DRIVER_ARGUMENTS"),
+            # "SELENIUM_DRIVER_ARGUMENTS":config.get("SELENIUM_DRIVER_ARGUMENTS"),
             "DOWNLOADER_MIDDLEWARES": {
                 'scrapy_selenium.SeleniumMiddleware': 800
             }
